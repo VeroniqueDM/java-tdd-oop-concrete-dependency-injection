@@ -37,14 +37,14 @@ public class Computer {
         psu.turnOn();
     }
 
-    public void installGame(String gameName) {
-        Game game = new Game(gameName);
+    public void installGame(Game game) {
+//        Game game = new Game(gameName);
         this.installedGames.add(game);
     }
 
-    public String playGame(String gameName) {
+    public String playGame(Game game) {
         for (Game g : this.installedGames) {
-            if (g.name.equals(gameName)) {
+            if (g.equals(game)) {
                 return g.start();
             }
         }
